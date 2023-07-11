@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-header" style="text-align:center"><b>WEL COME TO CASECADDING DROP DOWN EXAMPLE</b>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div id="output"></div>
+                        <button id="mybtn">Hi</button>
+                        <input type="text" name="search" id="search">
+                        g here {{ g.value | json  }}
+                        valid {{g.valid}} {{g.touched}} {{g.errors|json}}
+                        {{g.controls.StudentName.errors | json}}
+                        <form action="post" (ngSubmit)="submit()" [formGroup]="FormStudent">
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+
+                                <div class="form-group">
+                                    <label for="Student" class="form-group">Student</label>
+                                    <input type="text" class="form-control" formControlName="StudentName" id="company"
+                                        placeholder="Enter Student Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Country" class="form-group">
+                                        Country
+                                    </label>
+                                    <select class="form-control" id="Country" formControlName="Country" name="Country"
+                                        (change)="CountryChanged()">
+                                        <option value="0">--select--</option>
+                                        <option *ngFor="let cntry of CountryList" value="{{cntry.countryId}}">
+                                            {{cntry.countryName}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="State" class="form-group">States</label>
+                                    <select name="State" formControlName="State" id="State" class="form-control"
+                                        (change)="StateChanged()">
+                                        <option value="0">--select--</option>
+                                        <option *ngFor="let state of StateList" value="{{state.stateId}}">
+                                            {{state.stateName}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="City" class="form-group">Cities</label>
+                                    <select formControlName="City" name="City" id="City" class="form-control">
+                                        <option value="0">--select--</option>
+                                        <option *ngFor="let city of CityList" value="{{city.cityId}}">
+                                            {{city.cityName}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <button [disabled]="!g.valid" type="submit"> submit</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

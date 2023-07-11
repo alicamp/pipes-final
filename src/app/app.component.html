@@ -1,0 +1,35 @@
+<!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a routerLink="/" class="navbar-brand">Pipe Demo</a>
+    </div>
+  </div>
+
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a routerLink="/home">home</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/about">about</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/pipes">pipes</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+<mat-toolbar color="primary">
+  <h1>
+    ngStore 
+  </h1>
+  <button mat-button routerLink="/">Home</button>
+  <button mat-button routerLink="/about">About</button>
+  <button mat-button routerLink="/pipes">Pipes</button>
+  <button mat-button routerLink="/cascade">Cascade</button>
+  <button mat-button routerLink="/rx">Rx</button>
+</mat-toolbar>
+
+
+<router-outlet></router-outlet>
+<div *ngIf="showLoadingIndicator" class="spinner">{{showLoadingIndicator}}</div>

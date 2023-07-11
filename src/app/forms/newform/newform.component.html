@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            {{checkoutForm.value | json }}
+            <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                <div class="formGroup">
+                    <div class="form-group">
+                        <label for="name">name</label>
+                        <input type="text" class="form-control" name="name" formControlName="name" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">address</label>
+                        <input type="text" class="form-control" name="address" id="address" formControlName="address">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Purchase
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

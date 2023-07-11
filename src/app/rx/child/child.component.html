@@ -1,0 +1,13 @@
+<div class="col-lg-8 col-md-8 col-sm-8">
+    <!-- {{showA}} {{showB}} {{showC}} -->
+    <div *ngIf="showA">
+        <div>Section A</div>
+    </div>
+
+    <div *ngIf="showB">
+        <div>Section B</div>
+    </div>
+    <br />
+    Employee details 
+    <app-sub-child [passedValue]="passValues"></app-sub-child>
+</div>
